@@ -169,20 +169,25 @@ export default [{
         name: '',
         selectIndex: 0,
         detailList: [{
-            name: '只能排序',
+            name: '不限',
             icon: '',
             value: '0',
             selectIndex: 0
         }, {
-            name: '离我最近',
+            name: '智能排序',
             icon: '',
             value: '1',
             selectIndex: 1
         }, {
-            name: '评价最好',
+            name: '离我最近',
             icon: '',
             value: '2',
             selectIndex: 2
+        }, {
+            name: '评价最好',
+            icon: '',
+            value: '3',
+            selectIndex: 3
         }]
     }]
 }, {
@@ -225,7 +230,7 @@ export default [{
                 selectIndex: -1
             }
         ]
-    },{
+    }, {
         icon: '',
         name: '入住类型',
         selectIndex: 1,

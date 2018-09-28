@@ -116,16 +116,16 @@ export default {
             this.$router.push({ path: '/list' })
         },
         handleShowDialog(v) {
-          // console.log(v);
+          console.log(v);
         },
         handleCloseDialog(v) {
-          // console.log(v);
+          console.log(v);
         },
         handleChangeTab(v) {
-          // console.log(v);
+          console.log(v);
         },
         handleChangeMainItem(v) {
-          // console.log(v)
+          console.log(v)
         },
         changeData(v) {
             console.log(v);

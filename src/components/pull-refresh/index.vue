@@ -10,10 +10,13 @@
 </template>
 <style lang="less">
 	ul li {
-		min-height: 100px;
-		line-height: 100px;
+		min-height: 6.25rem;
+		line-height: 6.25rem;
 		text-align: center;
-		border: 1px solid red;
+		border-bottom: 1px solid #ccc;
+		&:first-child {
+			border-top: 1px solid #ccc;
+		}
 	}
 </style>
 <script>

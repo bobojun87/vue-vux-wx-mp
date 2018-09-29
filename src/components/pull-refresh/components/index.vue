@@ -71,11 +71,11 @@
 				this.startScroll = this.$el.scrollTop || 0;
 				this.touching = true; //留着有用，不能删除
 
-				this.dataList.noFlag = false;
-				this.$el.querySelector('.load-more').style.display = 'block';
+				// this.dataList.noFlag = false;
+				// this.$el.querySelector('.load-more').style.display = 'block';
 			},
 			touchMove(e) {
-				if(!this.enableRefresh || this.dataList.noFlag || !this.touching) {
+				if(!this.enableRefresh || !this.touching) {
 					return
 				}
 				let diff = e.targetTouches[0].pageY - this.startY - this.startScroll
@@ -91,7 +91,12 @@
 				}
 
 				let more = this.$el.querySelector('.load-more');
+				console.log(this.startY, e.changedTouches[0].pageY)
+				if (this.startY <= e.changedTouches[0].pageY) {
+					return
+				}
 				if(!this.top && this.state === 0) {
+					this.dataList.noFlag = false;
 					more.style.display = 'block';
 				} else {
 					more.style.display = 'none';
@@ -120,7 +125,7 @@
 					endY = e.changedTouches[0].pageY,
 					dy = this.startY - endY,
 					dx = endX - this.startX;
-
+				console.log(dy, dx)
 				//如果滑动距离太短  
 				if(Math.abs(dx) < 2 && Math.abs(dy) < 2) {
 					console.log("滑动距离太短")
@@ -155,7 +160,7 @@
 				this.top = this.offset;
 				setTimeout(() => {
 					this.onRefresh(this.refreshDone)
-				}, 300);
+				}, 500);
 			},
 			refreshDone() {
 				this.state = 0
